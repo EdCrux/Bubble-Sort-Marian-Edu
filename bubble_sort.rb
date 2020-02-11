@@ -1,8 +1,3 @@
-test_array = [4,3,78,2,999,6,0,2]
-test_string = ["hi","hello","hey"]
-
-
-
 def bubble_sort_by(array)
     max = 2
     temp_array = array
@@ -28,5 +23,4 @@ def bubble_sort (array)
     return a 
 end
 
-p bubble_sort(test_string)
 
