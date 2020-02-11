@@ -1,26 +1,24 @@
 def bubble_sort_by(array)
-    max = 2
-    temp_array = array
-    until max == array.length
-        for i in 0..(array.length - max)       
-            if yield(temp_array[i], temp_array[i+1]) >= 1
-                t = temp_array[i];
-                temp_array[i] = temp_array[i+1]
-                temp_array[i+1] = t
-            end   
+  max = 2
+  temp_array = array
+  until max == array.length
+    for i in 0..(array.length - max)
+      if yield(temp_array[i], temp_array[i + 1]) >= 1
+        t = temp_array[i];
+        temp_array[i] = temp_array[i + 1]
+        temp_array[i + 1] = t
         end
-        max += 1
     end
-    temp_array
+    max += 1
+  end
+  temp_array
 end
 
-def bubble_sort (array)
-    if array[0].is_a? String
-       a = bubble_sort_by(array) do |left,right| left.length - right.length ;end
-    else
-        a = bubble_sort_by(array) do |left,right| left <=> right ;end
-    end
-    return a 
+def bubble_sort(array)
+  if array[0].is_a? String
+    a = bubble_sort_by(array) do |left, right| left.length - right.length end
+  else
+    a = bubble_sort_by(array) do |left, right| left <=> right end
+  end
+  return a
 end
-
-
